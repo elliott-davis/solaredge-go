@@ -8,7 +8,7 @@ import (
 type SiteEnergyDetailsRequest struct {
 	StartTime DateTime `url:"startTime"`
 	EndTime DateTime `url:"endTime"`
-	Meters []Meter `url:"meter"`
+	Meters []Meter `url:"meters"`
 	TimeUnit *TimeUnit `url:"timeUnit"` // Should probably be an enum
 }
 

@@ -13,7 +13,7 @@ type Meters struct {
 type SitePowerDetailsRequest struct {
 	StartTime DateTime `url:"startTime"`
 	EndTime DateTime `url:"endTime"`
-	Meters []Meter `url:"meter"`
+	Meters []Meter `url:"meters"`
 }
 
 type SitePowerDetails struct {
@@ -29,7 +29,7 @@ type SitePowerDetailsResponse struct {
 func  (s *SiteService) PowerDetails(siteId int64, request SitePowerDetailsRequest) (SitePowerDetails, error) {
 	// Ensure start and end are defined
 	if request.EndTime.IsZero() || request.StartTime.IsZero() {
-		return SitePowerDetails{}, errors.New("start and End times are required")
+		return SitePowerDetails{}, errors.New("start and end times are required")
 	}
 
 	u, err := addOptions(fmt.Sprintf("/site/%d/powerDetails/", siteId), request)
