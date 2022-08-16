@@ -3,7 +3,7 @@ package solaredge
 type SiteListResponse struct {
 	Sites struct {
 		Count int64  `json:"count"`
-		List  []Site `json:"list"`
+		List  []Site `json:"site"`
 	}
 }
 
